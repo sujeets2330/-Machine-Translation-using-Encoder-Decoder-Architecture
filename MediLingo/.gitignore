@@ -1,0 +1,28 @@
+@"
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+
+# Environment variables
+.env
+.venv
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Audio files
+*.wav
+*.mp3
+*.ogg
+
+# IDE
+.vscode/
+.idea/
+"@ | Out-File -FilePath .gitignore -Encoding utf8

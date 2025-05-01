@@ -1,0 +1,17 @@
+Flask==2.3.2
+whisper==1.0.0
+transformers==4.30.2
+torch==2.0.1
+gTTS==2.3.2
+python-dotenv==1.0.0
+Flask-Bootstrap==3.3.7.1
+waitress==2.1.2
+pydub==0.25.1
+langdetect==1.0.9
+soundfile==0.12.1
+pydub==0.25.1
+openai-whisper==20230314 
+transformers>=4.30
+sentencepiece
+torch
+protobuf

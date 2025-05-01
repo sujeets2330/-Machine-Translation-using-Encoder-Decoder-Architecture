@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center">MediLingo Universal Translator</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Language Selection Row -->
+                    <div class="row mb-4">
+                        <div class="col-md-5">
+                            <select class="form-select" id="sourceLanguage">
+                                {% for code, name in config.LANGUAGES.items() %}
+                                <option value="{{ code }}">{{ name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <button id="swapLanguages" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                        </div>
+                        <div class="col-md-5">
+                            <select class="form-select" id="targetLanguage">
+                                {% for code, name in config.LANGUAGES.items() %}
+                                <option value="{{ code }}" {% if code == 'en' %}selected{% endif %}>{{ name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Input Box with Voice Button -->
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" id="inputText" rows="5" placeholder="Enter text or record voice..."></textarea>
+                        <button class="btn btn-outline-primary" id="recordButton">
+                            <i class="bi bi-mic"></i>
+                        </button>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
+                        <button id="translateBtn" class="btn btn-primary me-md-2">
+                            <i class="bi bi-translate"></i> Translate
+                        </button>
+                        <button id="speakBtn" class="btn btn-success" disabled>
+                            <i class="bi bi-volume-up"></i> Speak
+                        </button>
+                    </div>
+
+                    <!-- Result Box -->
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Translation Result</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="outputText" class="translation-output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Add Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+<!-- Our custom JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
