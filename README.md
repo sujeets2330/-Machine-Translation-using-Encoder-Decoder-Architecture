@@ -78,8 +78,8 @@ git clone https://github.com/yourusername/Machine-Translation-using-Encoder-Deco
 cd Machine-Translation-using-Encoder-Decoder-Architecture
 
 ### 2. Create a Virtual Environment (optional but recommended)
-```python -m venv venv<br>
-source venv/bin/activate<br>
+```python -m venv venv
+source venv/bin/activate
 # On Windows: venv\Scripts\activate
 ```
 ### 3. Install Requirements
@@ -87,25 +87,25 @@ source venv/bin/activate<br>
 pip install -r requirements.txt
 ``` 
 ### 4. Preprocess Data
-The data preprocessing can be done by running the preprocessing script that will clean and tokenize the text data.<br>
+The data preprocessing can be done by running the preprocessing script that will clean and tokenize the text data.
 ```
 python preprocess_data.py
 ```
 
 ### 5. Train the Model
-You can train the model using the following script. Make sure to provide the correct paths for your training and validation data.<br>
+You can train the model using the following script. Make sure to provide the correct paths for your training and validation data.
 ```
 python train_model.py
 ```
 ### 6. Run the Flask Application (for Inference)
-Once the model is trained, you can use the Flask app to serve the translation model and perform inference.<br>
+Once the model is trained, you can use the Flask app to serve the translation model and perform inference.
 ```
   python app.py
 ```
 Access the app at: http://127.0.0.1:5000
 
 ### 🧑‍💻 Example Usage
-Translate English to French: <br>
+Translate English to French: 
 ```
 from models.encoder_decoder import EncoderDecoderModel
 
